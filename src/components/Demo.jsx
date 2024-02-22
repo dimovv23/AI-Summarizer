@@ -5,11 +5,13 @@ import { FaRegCopy } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { MdDeleteForever } from "react-icons/md";
 import loadingImg from "../assets/loading.gif";
+import { FaHistory } from "react-icons/fa";
 
 const Demo = () => {
   const [article, setArticle] = useState({
     url: "",
     summary: "",
+    date: "",
   });
 
   const [allArticles, setAllArticles] = useState([]);
@@ -43,6 +45,7 @@ const Demo = () => {
       const newArticle = {
         ...article,
         summary: data.summary,
+        date: new Date().toLocaleDateString("en-GB"),
       };
 
       const updatedAllArticles = [newArticle, ...allArticles];
@@ -66,6 +69,10 @@ const Demo = () => {
     );
     setAllArticles(updatedArticles);
     localStorage.setItem("articles", JSON.stringify(updatedArticles));
+
+    if (article.url === urlToDelete) {
+      setArticle({ url: "", summary: "" });
+    }
   };
 
   return (
@@ -84,32 +91,32 @@ const Demo = () => {
         </form>
 
         {/*TODO: URL history */}
-
-        <div className="history-container">
-          <h3>History</h3>
-          {allArticles.map((article, index) => (
-            <div
-              className="link-card"
-              key={`link-${index}`}
-              onClick={() => setArticle(article)}
-            >
-              <div onClick={() => handleCopy(article.url)}>
-                {copied === article.url ? (
-                  <FaCheck className="check" />
-                ) : (
-                  <FaRegCopy />
-                )}
+        {allArticles.length > 0 && (
+          <div className="history-container">
+            <FaHistory />
+            {allArticles.map((article, index) => (
+              <div className="link-card" key={`link-${index}`}>
+                <div onClick={() => handleCopy(article.url)}>
+                  {copied === article.url ? (
+                    <FaCheck className="check" />
+                  ) : (
+                    <FaRegCopy />
+                  )}
+                </div>
+                <span onClick={() => setArticle(article)}>
+                  <p>{article.url}</p>
+                </span>
+                <div>{article.date}</div>
+                <div>
+                  <MdDeleteForever
+                    onClick={() => handleDelete(article.url)}
+                    className="delete-icon"
+                  />
+                </div>
               </div>
-              <p>{article.url}</p>
-              <div>
-                <MdDeleteForever
-                  onClick={() => handleDelete(article.url)}
-                  className="delete-icon"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
       {/* TODO: Display results */}
       <div>

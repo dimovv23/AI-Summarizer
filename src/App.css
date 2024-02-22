@@ -126,12 +126,23 @@
 }
 
 .link-card div {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   box-shadow: 0 5px 10px #272932;
   padding: 0.5rem;
+}
+
+.link-card span {
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.link-card span:hover {
+  color: #68f49e;
 }
 
 .check {
