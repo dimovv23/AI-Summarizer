@@ -17,15 +17,6 @@
   padding: 0 2rem;
 }
 
-.github-button {
-  border: none;
-  outline: none;
-  background-color: whitesmoke;
-  color: black;
-  padding: 0.5rem 0.75rem;
-  border-radius: 20px;
-}
-
 .header h1 {
   font-size: 3rem;
   font-weight: 300;
@@ -75,7 +66,7 @@
   display: block;
   color: whitesmoke;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 0.5rem 2rem;
   background-color: black;
   margin: 0 2rem;
@@ -85,7 +76,7 @@
 }
 
 .search-container form input:focus {
-  border: solid 1px rgb(104, 244, 158);
+  border: solid 1px #68f49e;
 }
 
 .search-container form button {
@@ -96,4 +87,66 @@
   color: whitesmoke;
   background-color: black;
   font-size: 1rem;
+}
+
+.loading-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.loading-image img {
+  height: 50px;
+}
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 5px 10px black;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 0.5rem 2rem;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #272932;
+  border-radius: 20px;
+  padding: 0 0.5rem;
+}
+
+.link-card p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.link-card div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px #272932;
+  padding: 0.5rem;
+}
+
+.check {
+  color: #68f49e;
+}
+
+.delete-icon:hover {
+  color: red;
+}
+
+.summary-container {
+  background-color: #444756;
+  box-shadow: 0 5px 10px black;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 0.5rem 2rem;
+  overflow: hidden;
 }

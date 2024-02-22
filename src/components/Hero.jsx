@@ -4,8 +4,7 @@ const Hero = () => {
   return (
     <header className="header">
       <nav>
-        <img src={logoImg} alt="" width={200} />
-        <button className="github-button">GitHub</button>
+        <img src={logoImg} alt="" width={250} />
       </nav>
       <h1>
         Summarize Articles with <span>OpenAI GPT-4</span>{" "}

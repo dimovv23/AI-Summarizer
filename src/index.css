@@ -2,11 +2,24 @@
 
 :root {
   color: rgba(255, 255, 255, 0.87);
-  background-color: #111111;
+  background-color: #272932;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
 }
 
 body {
   margin: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #272932;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #272932;
+  border-radius: 25px;
 }
